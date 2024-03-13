@@ -178,7 +178,7 @@ checkOutBtn.addEventListener("click", function(){
         )
     }).join("")
 
-    const message = encodeURIComponent(cartItems + ` Valor total: R$${cartTotal.textContent}`);
+    const message = encodeURIComponent(cartItems + ` Valor total:${cartTotal.textContent}`);
     const phone = "+5588998404876"
     
 
