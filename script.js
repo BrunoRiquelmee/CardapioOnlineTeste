@@ -334,6 +334,8 @@ function addToCart(name, price, size) {
     
     if (existingItem) {
         existingItem.quantity += 1;
+        
+        
     } else {
         cart.push({
             name,
@@ -343,24 +345,34 @@ function addToCart(name, price, size) {
         });
     }
     updateCartModal();
-    Toastify({
-        text: `${name} ${size} adicionado ao carrinho`,
-        duration: 3000,
-        close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-            background: "#4caf50",
-            color: "#fff", // Cor do texto
-            'font-size': "15px", // Tamanho da fonte
-            'padding-left': "40px", // Espaçamento à esquerda para o ícone
-            'background-image': "url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 576 512\"><path fill=\"white\" d=\"M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z\"/></svg>')", // Substitua pelo código SVG real
-            'background-repeat': "no-repeat", // Impede a repetição do ícone
-            'background-position': "10px center", // Posiciona o ícone corretamente
-            'background-size': "15px"
-        },
-    }).showToast();
+   
+    let toastText = `${name}`;
+
+    // Verifica se o tamanho está definido e o adiciona ao texto do toast após o nome
+    if (size) {
+        toastText += ` (${size})`;
+    }
+    
+    toastText += ` adicionado ao carrinho`;
+
+Toastify({
+    text: toastText ,
+    duration: 3000,
+    close: true,
+    gravity: "top",
+    position: "right",
+    stopOnFocus: true,
+    style: {
+        background: "#4caf50",
+        color: "#fff",
+        'font-size': "15px",
+        'padding-left': "40px",
+        'background-image': "url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 576 512\"><path fill=\"white\" d=\"M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z\"/></svg>')",
+        'background-repeat': "no-repeat",
+        'background-position': "10px center",
+        'background-size': "15px"
+    },
+}).showToast();
 }
 
 
@@ -481,7 +493,7 @@ checkOutBtn.addEventListener("click", function(){
 
     //ENVIAR PEDIDO PRA API DO ZAP
     const cartItems = cart.map((item) => {
-        let itemInfo = `\n•${item.name} | Quantidade: (${item.quantity}) | Preço:R$${item.price.toFixed(2)}\n `;
+        let itemInfo = `•${item.name} | Quantidade: (${item.quantity}) | Preço: R$${item.price.toFixed(2)}`;
     
         // Adiciona o tamanho apenas se estiver definido para o item
         if (item.size) {
@@ -493,7 +505,7 @@ checkOutBtn.addEventListener("click", function(){
     
     const total = updateCartModal();
     
-    const message = encodeURIComponent(`${cartItems}  \n*Valor total: R$${total.toFixed(2)}*\n*Endereço: ${addressInput.value}*`);
+    const message = encodeURIComponent(`${cartItems}\n  \n*Valor total: R$${total.toFixed(2)}*\n*Endereço: ${addressInput.value}*`);
     const phone = "+5588998404876";
     
     window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
