@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Meta tags OG-->
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Teste restaurante - O melhor restaurante"/>
+    <meta property="og:image" content="https://cardapio-online-ten.vercel.app/assets/hamb-1.png"/>
+    <meta property="og:description" content="O melhor resaturante da cidade"/>
+    <meta property="og:site_name" content="TesteBurguer"/>
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
 
@@ -20,10 +26,10 @@
     <!--HEADER-->
     <header class="w-full h-[420px] bg-zinc-900 bg-home bg-cover bg-center">
         <div class="w-full h-full flex flex-col justify-center items-center">
-            <img src="./assets/hamb-1.png" alt="Logo dev Burger" class="w-32 h-32 rounded-full shadow-lg
+            <img src="./assets/iconeRestaurante.jpg" alt="Logo dev Burger" class="w-32 h-32 rounded-full shadow-lg
              hover:scale-110 duration-200">
 
-             <h1 class="text-4xl mt-4 mb-2 font-bold text-white">Teste Burguer</h1>
+             <h1 class="text-4xl mt-4 mb-2 font-bold text-white">Teste Pizza</h1>
 
              <span class="text-white font-medium">Rua dev 10, Fortaleza - CE</span>
 
@@ -35,78 +41,61 @@
     <!--FIM DO HEADER-->
     
 
-    <h2 class="text2-l md:text-4xl font-bold text-center mt-9 mb-6">
-        Conheça nosso menu
+    <h2 class="flex justify-center items-center text-2xl md:text-4xl font-bold text-center mt-9 mb-6">
+        <i class="fa-solid fa-pizza-slice"></i>
+        <p>Conheça nosso menu</p>
+        <i class="fa-solid fa-pizza-slice"></i>
     </h2>
 
     <!--INICIO MENU-->
-    <div id="menu">
-        <div class="flex items-center justify-center text-lg  md:text-lg font-bold text-center mt-9 mb-6">
-            <p class="underline mr-16 hover:scale-110 duration-300"><a href="#sectionHamburguer">Hamburguers</p></a>
-            <p class="underline hover:scale-110 duration-300"><a href="#sectionBebidas">Bebidas</p></a>
+    <div class="px-3" id="menu">
+        <div class="flex items-center flex-col justify-center text-lg  md:text-lg font-bold text-center mt-9 mb-6">
+            <nav class="flex mx-4">
+                <div class="flex items-center pr-3">    
+                    <img class="max-h-7" src="assets/icone-pizza.png" alt="icone pizza">
+                    <a class="px-2 duration-700 hover:underline" href="#pizzas">Pizzas</a>
+                </div>
+                <div class="flex mr-4 ">
+                    <a class="px-2 hover:underline duration-700" href="#bebidas">Bebidas</a>
+                    <img class="max-h-7" src="assets/coca-icone.png" alt="icone coca cola">
+                </div>
+            </nav>
         </div>
         
         <div class="mx-auto max-w-7xl px-2 my-2">
-            <h2 id="sectionHamburguer" class="underline font-bold text-3xl mb-7">Hamburguers</h2>
+            <h2 id="pizzas" class="underline font-bold text-3xl mb-7">Pizzas</h2>
         </div>
         <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16">
 
             <!--PRODUTO ITEM-->
             <div class="flex gap-2">
-                <img src="./assets/hamb-1.png" alt="Hamburguer Smash"
-                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+                <img src="./assets/pizza-calabresa.jpg" alt="Pizza Calabresa"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
                 <div>
-                    <p class="font-bold">Hamburguer Smash</p>
-                    <p class="text-sm">Pão pesadinho de fermentação natural da trigo, carne de 160g, queijo e maionese especial</p>
-                    
+                    <p class="font-bold">Pizza Calabresa</p>
+                    <p class="text-sm">Massa fina e crocante coberta com molho de tomate fresco, generosas fatias de
+                        calabresa defumada, queijo mussarela derretido, cebola em rodelas e azeitonas pretas. Um
+                        clássico irresistível que vai conquistar seu paladar!</p>
+
                     <div class="flex items-center gap-2 justify-between mt-4">
-                        <p class="font-bold text-lg">R$ 18.90</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn"
-                        data-name="Hamburguer Smash"
-                        data-price="18.90">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        <button class="bg-gray-900 text-white px-5 rounded prices hover:scale-125 duration-300"
+                            data-name="Pizza Calabresa" data-price="18.90" data-size="P">
+                            P
+                        </button>
+                        <button class="bg-gray-900 text-white px-5 rounded prices hover:scale-125 duration-300"
+                            data-name="Pizza Calabresa" data-price="20.00" data-size="M">
+                            M
+                        </button>
+                        <button class="bg-gray-900 text-white px-5 rounded prices hover:scale-125 duration-300"
+                            data-name="Pizza Calabresa" data-price="30.00" data-size="G">
+                            G
                         </button>
                     </div>
-                </div>
-            </div>
-            <!--FIM PRODUTO ITEM-->
-            
-            <!--PRODUTO ITEM-->
-            <div class="flex gap-2">
-                <img src="./assets/hamb-2.png" alt="Hamburguer Duplo"
-                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
-
-                <div>
-                    <p class="font-bold">Hamburguer Duplo</p>
-                    <p class="text-sm">Pão Levinho de fermentação natural da trigo, burger 160g, queijo e maionese da casa</p>
-                    
                     <div class="flex items-center gap-2 justify-between mt-4">
-                        <p class="font-bold text-lg">R$ 18.90</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn"
-                        data-name="Hamburguer Duplo"
-                        data-price="32.90">
-                            <i class="fa fa-cart-plus text-lg text-white"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!--FIM PRODUTO ITEM-->
-
-            <!--PRODUTO ITEM-->
-            <div class="flex gap-2">
-                <img src="./assets/hamb-3.png" alt="Hamburguer Salad"
-                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
-
-                <div>
-                    <p class="font-bold">Hamburguer Salad</p>
-                    <p class="text-sm">Pão Levinho de fermentação natural da trigo, burger 160g, queijo e maionese da casa</p>
-                    
-                    <div class="flex items-center gap-2 justify-between mt-4">
-                        <p class="font-bold text-lg">R$ 35.90</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn"
-                        data-name="Hamburguer Salad"
-                        data-price="35.90">
+                        <p data-name="Pizza Calabresa" class="font-bold text-lg">R$ 18.90 (P)</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Pizza Calabresa"
+                            data-price="18.90" data-size="P">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
@@ -116,18 +105,105 @@
 
             <!--PRODUTO ITEM-->
             <div class="flex gap-2">
-                <img src="./assets/hamb-4.png" alt="Hamburguer da Casa"
-                class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+                <img src="./assets/pizza-calabresa.jpg" alt="Pizza Frango"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
                 <div>
-                    <p class="font-bold">Hamburguer da Casa</p>
-                    <p class="text-sm">Pão Levinho de fermentação natural da trigou, burger 160g, queijo e maionese da casa</p>
-                    
+                    <p class="font-bold">Pizza Frango</p>
+                    <p class="text-sm">Massa fina e crocante coberta com molho de tomate fresco, generosas fatias de
+                        calabresa defumada, queijo mussarela derretido, cebola em rodelas e azeitonas pretas. Um
+                        clássico irresistível que vai conquistar seu paladar!</p>
+
                     <div class="flex items-center gap-2 justify-between mt-4">
-                        <p class="font-bold text-lg">R$ 30</p>
-                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn"
-                        data-name="Hamburguer da Casa"
-                        data-price="30">
+                        <button class="bg-gray-900 text-white px-5 rounded prices hover:scale-125 duration-300"
+                            data-name="Pizza Frango" data-price="18.90" data-size="P">
+                            P
+                        </button>
+                        <button class="bg-gray-900 text-white px-5 rounded prices hover:scale-125 duration-300"
+                            data-name="Pizza Frango" data-price="20.00" data-size="M">
+                            M
+                        </button>
+                        <button class="bg-gray-900 text-white px-5 rounded prices hover:scale-125 duration-300"
+                            data-name="Pizza Frango" data-price="30.00" data-size="G">
+                            G
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-2 justify-between mt-4">
+                        <p data-name="Pizza Frango" class="font-bold text-lg">R$ 18.90 (P)</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Pizza Frango"
+                            data-price="18.90" data-size="P">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM-->
+
+            <!--PRODUTO ITEM-->
+            <div class="flex gap-2">
+                <img src="./assets/pizza-calabresa.jpg" alt="Pizza Calabresa"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div>
+                    <p class="font-bold">Pizza Quatro Queijos</p>
+                    <p class="text-sm">Massa fina e crocante coberta com molho de tomate fresco, generosas fatias de
+                        calabresa defumada, queijo mussarela derretido, cebola em rodelas e azeitonas pretas. Um
+                        clássico irresistível que vai conquistar seu paladar!</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-4">
+                        <button class="bg-gray-900 text-white px-5 rounded prices hover:scale-125 duration-300"
+                            data-name="Pizza Quatro Queijos" data-price="18.90" data-size="P">
+                            P
+                        </button>
+                        <button class="bg-gray-900 text-white px-5 rounded prices hover:scale-125 duration-300"
+                            data-name="Pizza Quatro Queijos" data-price="20.00" data-size="M">
+                            M
+                        </button>
+                        <button class="bg-gray-900 text-white px-5 rounded prices hover:scale-125 duration-300"
+                            data-name="Pizza Quatro Queijos" data-price="30.00" data-size="G">
+                            G
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-2 justify-between mt-4">
+                        <p data-name="Pizza Quatro Queijos" class="font-bold text-lg">R$ 18.90 (P)</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Pizza Quatro Queijos"
+                            data-price="18.90" data-size="P">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM-->
+
+            <!--PRODUTO ITEM-->
+            <div class="flex gap-2">
+                <img src="./assets/pizza-calabresa.jpg" alt="Pizza Carne de sol"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div>
+                    <p class="font-bold">Pizza Carne de sol</p>
+                    <p class="text-sm">Massa fina e crocante coberta com molho de tomate fresco, generosas fatias de
+                        calabresa defumada, queijo mussarela derretido, cebola em rodelas e azeitonas pretas. Um
+                        clássico irresistível que vai conquistar seu paladar!</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-4">
+                        <button class="bg-gray-900 text-white px-5 rounded prices hover:scale-125 duration-300"
+                            data-name="Pizza Carne de Sol" data-price="18.90" data-size="P">
+                            P
+                        </button>
+                        <button class="bg-gray-900 text-white px-5 rounded prices hover:scale-125 duration-300"
+                            data-name="Pizza Carne de Sol" data-price="20.00" data-size="M">
+                            M
+                        </button>
+                        <button class="bg-gray-900 text-white px-5 rounded prices hover:scale-125 duration-300"
+                            data-name="Pizza Carne de Sol" data-price="30.00" data-size="G">
+                            G
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-2 justify-between mt-4">
+                        <p data-name="Pizza Carne de Sol" class="font-bold text-lg">R$ 18.90 (P)</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Pizza Carne de Sol"
+                            data-price="18.90" data-size="P">
                             <i class="fa fa-cart-plus text-lg text-white"></i>
                         </button>
                     </div>
@@ -138,63 +214,161 @@
         </main>
 
         <div class="mx-auto max-w-7xl px-2 my-2">
-            <h2 id="sectionBebidas" class="underline font-bold text-3xl mb-7">Bebidas</h2>
+            <h2 id="sectionHamburguer" class="font-bold text-3xl mb-7 underline">Hamburguers</h2>
+        </div>
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16">
+
+            <!--PRODUTO ITEM-->
+            <div class="flex gap-2">
+                <img src="./assets/hamb-2.png" alt="Hamburguer Smash"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div>
+                    <p class="font-bold">Hamburguer Smash</p>
+                    <p class="text-sm">Pão Levinho de fermentação natural da trigo, burger 160g, queijo e maionese
+                        da
+                        casa</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-4">
+                        <p class="font-bold text-lg">R$ 18.90</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hamburguer Smash"
+                            data-price="18.90">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM-->
+
+            <!--PRODUTO ITEM-->
+            <div class="flex gap-2">
+                <img src="./assets/hamb-2.png" alt="Hamburguer Duplo"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div>
+                    <p class="font-bold">Hamburguer Duplo</p>
+                    <p class="text-sm">Pão Levinho de fermentação natural da trigo, burger 160g, queijo e maionese
+                        da
+                        casa</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-4">
+                        <p class="font-bold text-lg">R$ 32.90</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hamburguer Duplo"
+                            data-price="32.90">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM-->
+
+            <!--PRODUTO ITEM-->
+            <div class="flex gap-2">
+                <img src="./assets/hamb-3.png" alt="Hamburguer Salad"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div>
+                    <p class="font-bold">Hamburguer Salad</p>
+                    <p class="text-sm">Pão Levinho de fermentação natural da trigo, burger 160g, queijo e maionese
+                        da
+                        casa</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-4">
+                        <p class="font-bold text-lg">R$ 35.90</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hamburguer Salad"
+                            data-price="35.90">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM-->
+
+            <!--PRODUTO ITEM-->
+            <div class="flex gap-2">
+                <img src="./assets/hamb-4.png" alt="Hamburguer da Casa"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div>
+                    <p class="font-bold">Hamburguer da Casa</p>
+                    <p class="text-sm">Pão Levinho de fermentação natural da trigou, burger 160g, queijo e maionese
+                        da
+                        casa</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-4">
+                        <p class="font-bold text-lg">R$ 30</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Hamburguer da Casa"
+                            data-price="30">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM-->
+
+        </main>
+
+
+        <div class="mx-auto max-w-7xl px-2 my-2">
+            <h2 id="sectionBebidas" class="font-bold text-3xl mb-7 underline">Bebidas</h2>
         </div>
 
         <!--GRID BEBIDAS-->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16" id="menu">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+            id="menu">
 
             <!--BEBIDA ITEM-->
-        <div class="flex gap-2 w-full">
-            <img src="./assets/refri-1.png" alt="Coca Lata"
-            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+            <div class="flex gap-2 w-full">
+                <img src="./assets/refri-1.png" alt="Coca Lata"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
 
-            <div class="w-full">
-                <p class="font-bold">Coca Lata</p>
-            
-                <div class="flex items-center gap-2 justify-between mt-4">
-                    <p class="font-bold text-lg">R$ 6</p>
-                    <button class="bg-gray-900 px-5 rounded add-to-cart-btn"
-                    data-name="Coca Lata"
-                    data-price="6">
-                        <i class="fa fa-cart-plus text-lg text-white"></i>
-                    </button>
+                <div class="w-full">
+                    <p class="font-bold">Coca Lata</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-4">
+                        <p class="font-bold text-lg">R$ 6</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Coca Lata"
+                            data-price="6">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!--FIM BEBIDA ITEM-->
-        
-        <!--BEBIDA ITEM-->
-        <div class="flex gap-2 w-full">
-            <img src="./assets/refri-2.png" alt="Guarana Lata"
-            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
-            
-            <div class="w-full">
-                <p class="font-bold">Guaraná Lata</p>
-                
-                <div class="flex items-center gap-2 justify-between mt-4">
-                    <p class="font-bold text-lg">R$ 6</p>
-                    <button class="bg-gray-900 px-5 rounded add-to-cart-btn"
-                    data-name="Guaraná Lata"
-                    data-price="6r">
-                    <i class="fa fa-cart-plus text-lg text-white"></i>
-                </button>
+            <!--FIM BEBIDA ITEM-->
+
+            <!--BEBIDA ITEM-->
+            <div class="flex gap-2 w-full bord">
+                <img src="./assets/refri-2.png" alt="Guarana Lata"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+
+                <div class="w-full">
+                    <p class="font-bold">Guaraná Lata</p>
+
+                    <div class="flex items-center gap-2 justify-between mt-4">
+                        <p class="font-bold text-lg">R$ 6</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Guaraná Lata"
+                            data-price="6r">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
+            <!--FIM BEBIDA ITEM-->
+
         </div>
+        <!--FIM GRID BEBIDAS-->
+
+
     </div>
-    <!--FIM BEBIDA ITEM-->
-    
-</div>
-<!--FIM GRID BEBIDAS-->
 
 </div>
-    <!--FIM MENU-->
+<!--FIM MENU-->
 
 <!--MODAL CART-->
     <div class="bg-black/65 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden
     "id="cart-modal">
 
-        <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
+        <div class="bg-white p-5 rounded-md min-w-[90%] overflow-auto md:min-w-[600px]" style="max-height: 100%;">
             <h2 class="text-center font-bold text-2xl mb-2">Meu carrinho</h2>
 
             <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
@@ -206,7 +380,7 @@
             <p class="text-red-500 hidden" id="address-warn">Digite seu endereço completo!</p>
 
             <div class="flex items-center justify-between mt-5 w-full">
-                <button id="close-modal-btn">Fechar</button>
+                <button id="close-modal-btn" class="bg-red-600 text-white px-4 py-1 rounded" >Fechar</button>
                 <button id="checkout-btn" class="bg-green-500 text-white px-4 py-1 rounded">Finalizar Pedido</button>
             </div>
 
